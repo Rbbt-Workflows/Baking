@@ -50,7 +50,7 @@ EOF
 
   desc 'Mix the whisked eggs with flour, blueberries are optional'
   dep :whisk_eggs
-  input :blueberries, :boolean, "Blue berries can give a lot of flavour", nil
+  input :blueberries, :boolean, "Blue berries can give a lot of flavour", false
   task :prepare_batter => :string do |add_blueberries|
     whisked_eggs = step(:whisk_eggs).load
     batter = Baking.mix(whisked_eggs, Pantry.flour.read)
